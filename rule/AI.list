@@ -1,7 +1,11 @@
-# NAME: AI (Gemini + Claude + OpenAI)
+# NAME: AI (Claude + OpenAI)
 # AUTHOR: Calvin
-# UPDATED: 2026-07-10
+# UPDATED: 2026-07-12
 # 上游: blackmatrix7/ios_rule_script + 手动补充
+# 注意: Gemini 已移出本列表 —— Google 全家桶(含 Gemini 全部域名)由上游
+#       blackmatrix7 Google.list 覆盖(其 DOMAIN-KEYWORD,google 命中所有
+#       Gemini 域名),配置里单独引用它并指向同一出口组,保证 Google 地区一致性:
+#       RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Google/Google.list,<组名>
 
 # > Claude / Anthropic(手动维护,上游已过时)
 DOMAIN-SUFFIX,anthropic.com
@@ -14,20 +18,6 @@ DOMAIN,cdn.growthbook.io
 IP-CIDR,160.79.104.0/23,no-resolve
 IP-CIDR,160.79.104.0/21,no-resolve
 IP-CIDR6,2607:6bc0::/48,no-resolve
-
-# > Gemini
-DOMAIN,ai.google.dev
-DOMAIN,alkalimakersuite-pa.clients6.google.com
-DOMAIN,makersuite.google.com
-DOMAIN,aistudio.google.com
-DOMAIN-SUFFIX,bard.google.com
-DOMAIN-SUFFIX,deepmind.com
-DOMAIN-SUFFIX,deepmind.google
-DOMAIN-SUFFIX,gemini.google.com
-DOMAIN-SUFFIX,generativeai.google
-DOMAIN-SUFFIX,proactivebackend-pa.googleapis.com
-DOMAIN-SUFFIX,apis.google.com
-DOMAIN-KEYWORD,generativelanguage
 
 # > OpenAI / ChatGPT
 DOMAIN,chat.openai.com.cdn.cloudflare.net
